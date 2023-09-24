@@ -57,21 +57,25 @@ Tanggal       : $date
 rm -rf /root/backup
 rm -r /root/$IP-$date.zip
 clear
+echo -e "
+Detail Backup 
+==================================
+IP VPS        : $IP
+Link Backup   : $link
+Tanggal       : $date
+==================================
+"
+echo "Silahkan cek Kotak Masuk $email"
 CHATID="$CHATID"
 KEY="$KEY"
 TIME="$TIME"
 URL="$URL"
-TEXT="<code>-----------------------</code>
-<code>Detail Backup </code>
-<code>-----------------------</code>
-<code>DOMAIN       : ${domain}</code>
-<code>-----------------------</code>
-<code>IP VPS       : ${IP}</code>
-<code>-----------------------</code>
-<code>Link Backup   :</code> $link
-<code>-----------------------</code>
-<code>Tanggal : $date</code>
-<code>-----------------------</code>
+Detail Backup 
+==================================
+IP VPS        : $IP
+Link Backup   : $link
+Tanggal       : $date
+==================================
 "
 
 curl -s --max-time $TIME -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
